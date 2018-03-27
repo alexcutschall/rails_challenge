@@ -3,13 +3,12 @@ describe "rails_helper"
 describe "User visits edit page" do
   describe "user fills in form for student" do
     it "updates that students information" do
-      student = Student.new(name: "Alex")
-      student_2 = Student.new(name: "Jimmy")
+      student = Student.create!(name: "Alex")
+      student_2 = Student.create!(name: "Jimmy")
 
-      visit edit_student_path(student)
-
+      visit "/students/#{student.id}/edit"
       fill_in "Name", with: "Batman"
-      click_on "Edit Student"
+      click_on "Update Student"
 
       expect(current_path).to eq("/students/#{student.id}")
       expect(page).to have_content("Batman")
