@@ -6,7 +6,9 @@ describe "User visits edit page" do
       student = Student.create!(name: "Alex")
       student_2 = Student.create!(name: "Jimmy")
 
-      visit "/students/#{student.id}/edit"
+      visit "/students/#{student.id}"
+      click_on "Edit"
+      
       fill_in "Name", with: "Batman"
       click_on "Update Student"
 
