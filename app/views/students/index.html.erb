@@ -4,5 +4,5 @@
 </nav>
 
 <% @students.each do |student| %>
-  <%= student.name %>
+  <%= link_to student.name, student_path(student) %>
 <% end %>

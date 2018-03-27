@@ -29,4 +29,14 @@ describe "User can navigate with a nav bar" do
     expect(current_path).to eq("/students/new")
     end
   end
+  describe "user can click on user name" do
+    it "will take them to the students show page" do
+      student_2 = Student.create!(name: "Superman")
+      visit '/students'
+
+      click_on "Superman"
+
+      expect(current_path).to eq("/students/#{student_2.id}")
+    end
+  end
 end
