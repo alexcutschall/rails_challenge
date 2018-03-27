@@ -7,9 +7,8 @@ describe "User deletes a student" do
       student_2 = Student.create!(name: "Jimmy")
 
       visit "/students/#{student_1.id}"
-
       click_on "Delete"
-
+      
       expect(current_path).to eq("/students")
       expect(page).to have_content(student_2.name)
     end
