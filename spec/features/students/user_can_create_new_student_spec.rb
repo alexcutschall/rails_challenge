@@ -6,9 +6,9 @@ describe "User visits new student page" do
       visit '/students/new'
 
       fill_in "Name", with: "Alex"
-      click_on "Submit"
+      click_on "Create Student"
 
-      expect(current_path).to eq(student_path)
+      expect(current_path).to eq("/students/1")
       expect(page).to have_content("Alex")
     end
   end
