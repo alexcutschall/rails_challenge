@@ -6,3 +6,14 @@
 <%= @student.name %>
 <%= link_to "Edit", edit_student_path(@student) %>
 <%= link_to "Delete", student_path(@student), method: :delete %>
+
+
+Addresses:
+<% @student.addresses.each do |address| %>
+  <%= address.description %>
+  <%= address.street %>
+  <%= address.city %>
+  <%= address.state %>
+  <%= address.zip_code %>
+<% end %>
+<%= link_to "New Address", new_student_address_path(@student) %>

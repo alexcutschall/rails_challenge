@@ -1,0 +1,21 @@
+<nav id="navigation">
+  <%=  link_to "All Students", students_path %>
+  <%=  link_to "Create a New Student", new_student_path %>
+</nav>
+<%= form_for [@student, @address] do |f| %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :street %>
+  <%= f.text_field :street %>
+
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+
+  <%= f.label :zip_code %>
+  <%= f.text_field :zip_code %>
+  <%= f.submit %>
+<% end %>

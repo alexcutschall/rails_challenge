@@ -6,6 +6,13 @@ describe Student do
       student = Student.new
 
       expect(student).to be_invalid
-    end 
+    end
+  end
+  describe "relationships" do
+    it "should have many addresses" do
+      student = Student.create!(name: "Alex")
+
+      expect(student).to respond_to(:addresses)
+    end
   end
 end
