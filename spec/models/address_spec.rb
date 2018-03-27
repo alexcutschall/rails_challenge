@@ -9,6 +9,7 @@ describe Address do
                             city: "Denver",
                             state: "CO",
                             zip_code: "55011")
+      expect(address).to be_invalid
     end
     it "is invalid without street" do
       student = Student.create(name: "Alex")
@@ -17,6 +18,7 @@ describe Address do
                             city: "Denver",
                             state: "CO",
                             zip_code: "55011")
+      expect(address).to be_invalid
     end
     it "is invalid without city" do
       student = Student.create(name: "Alex")
@@ -25,6 +27,7 @@ describe Address do
 
                             state: "CO",
                             zip_code: "55011")
+      expect(address).to be_invalid
     end
     it "is invalid without state" do
       student = Student.create(name: "Alex")
@@ -33,14 +36,15 @@ describe Address do
                             city: "Denver",
 
                             zip_code: "55011")
+      expect(address).to be_invalid
     end
     it "is invalid without zip_code" do
       student = Student.create(name: "Alex")
       address = Address.new(description: "Home Address",
                             street: "123",
                             city: "Denver",
-                            state: "CO",
-                            )
+                            state: "CO")
+      expect(address).to be_invalid
     end
   end
 end

@@ -14,5 +14,10 @@ describe Student do
 
       expect(student).to respond_to(:addresses)
     end
+    it "should have many courses" do
+      student = Student.create!(name: "Alex")
+
+      expect(student).to respond_to(:courses)
+    end 
   end
 end
